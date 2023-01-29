@@ -20,6 +20,7 @@ import { useStores } from "../models" // @demo remove-current-line
 import {
   LoginScreen, // @demo remove-current-line
   WelcomeScreen,
+  CreateFoodScreen,
 } from "../screens"
 import { DemoNavigator, DemoTabParamList } from "./DemoNavigator" // @demo remove-current-line
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
@@ -42,6 +43,7 @@ export type AppStackParamList = {
   Login: undefined // @demo remove-current-line
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
   // 🔥 Your screens go here
+  CreateFoodScreen: undefined
 }
 
 /**
