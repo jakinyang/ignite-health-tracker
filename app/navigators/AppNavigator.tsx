@@ -21,6 +21,8 @@ import {
   LoginScreen, // @demo remove-current-line
   WelcomeScreen,
   CreateFoodScreen,
+  FoodLoggerScreen,
+  ReportScreen,
 } from "../screens"
 import { DemoNavigator, DemoTabParamList } from "./DemoNavigator" // @demo remove-current-line
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
@@ -44,6 +46,8 @@ export type AppStackParamList = {
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
   // 🔥 Your screens go here
   CreateFoodScreen: undefined
+  FoodLoggerScreen: undefined
+  ReportScreen: undefined
 }
 
 /**
@@ -70,7 +74,7 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName={isAuthenticated ? "Welcome" : "Login"} // @demo remove-current-line
+      initialRouteName="CreateFoodScreen"
     >
       {/* @demo remove-block-start */}
       {isAuthenticated ? (
@@ -87,6 +91,7 @@ const AppStack = observer(function AppStack() {
       )}
       {/* @demo remove-block-end */}
       {/** 🔥 Your screens go here */}
+      <Stack.Screen name="CreateFoodScreen" component={CreateFoodScreen}/>
     </Stack.Navigator>
   )
 })
